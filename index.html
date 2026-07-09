@@ -280,7 +280,11 @@
   .ticker .tick-dot { color: var(--accent-bright); font-style: normal; }
 
   /* ═══════ Section chrome ═══════ */
-  .section { position: relative; padding: clamp(4rem, 11vh, 8rem) 0; }
+  .section {
+    position: relative;
+    padding-top: clamp(4rem, 11vh, 8rem);
+    padding-bottom: clamp(4rem, 11vh, 8rem);
+  }
   .section-head {
     display: flex; align-items: center; gap: 1.1rem;
     margin: 0 0 clamp(2rem, 5vh, 3.4rem);
@@ -435,6 +439,9 @@
       flex-direction: column;
       justify-content: center;
     }
+    /* flex items ignore .shell's auto margins for stretching —
+       pin them to full width so gutters and max-width behave */
+    .record > .shell { width: 100%; }
     .record .section-head { padding-top: clamp(1.6rem, 4vh, 3rem); }
     .record-track {
       flex-direction: row;
